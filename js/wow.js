@@ -32,11 +32,27 @@
         if (i > 0) el.setAttribute('data-aos-delay', String(Math.min(i * 70, 350)));
       });
     });
+    AOS.refresh();
+    setTimeout(function () { AOS.refresh(); }, 300);
+    /* Pengaman: jika setelah 1.5 detik ada elemen yang belum tampil, paksa tampil */
+    setTimeout(function () {
+      document.querySelectorAll('[data-aos]').forEach(function (el) {
+        if (parseFloat(getComputedStyle(el).opacity) < 1) {
+          el.classList.add('aos-animate');
+        }
+      });
+    }, 1500);
+  } else {
+    /* AOS tidak termuat: pastikan tidak ada elemen yang tertinggal tersembunyi */
+    document.querySelectorAll('[data-aos]').forEach(function (el) {
+      el.removeAttribute('data-aos');
+    });
   }
 
   /* ---------- GSAP: hero + parallax ---------- */
   var hasGsap = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
-  if (hasGsap && !reduce) {
+  var reduceAll = reduce || !fine; /* tanpa mouse (HP/tablet): jangan pakai gsap.from + AOS bersamaan */
+  if (hasGsap && !reduceAll) {
     gsap.registerPlugin(ScrollTrigger);
 
     /* hero entrance */
@@ -89,7 +105,10 @@
 
     /* section parallax */
     document.querySelectorAll('section.block').forEach(function (sec) {
-      gsap.from(sec.querySelector('.head'), {
+      var head = sec.querySelector('.head');
+      if (!head) return;
+      if (head.hasAttribute('data-aos')) return; /* biar tidak dianimasikan ganda */
+      gsap.from(head, {
         scrollTrigger: { trigger: sec, start: 'top 82%', once: true },
         y: 40,
         opacity: 0,
@@ -97,6 +116,8 @@
         ease: 'power3.out'
       });
     });
+  } else if (hasGsap) {
+    /* Di HP/tablet: jangan ada animasi parallax; AOS saja yang bekerja */
   }
 
   /* ---------- Tilt on cards ---------- */
