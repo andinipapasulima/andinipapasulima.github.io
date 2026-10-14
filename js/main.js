@@ -153,6 +153,15 @@
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
 
+  /* ---------- Kembali ke atas: pastikan #top selalu ke posisi 0 ---------- */
+  $$('a[href="#top"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (err) {}
+    });
+  });
+
   /* ---------- Tombol CV: tampil hanya jika file PDF tersedia ---------- */
   var cvLinks = $$('[data-cv]');
   if (cvLinks.length && window.fetch && location.protocol !== 'file:') {
