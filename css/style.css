@@ -620,11 +620,7 @@ footer { border-top: 1px solid var(--line); padding-block: 2.25rem calc(2.25rem 
   .card::before { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
   .fcard { transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; }
   .pill .dot { animation: pulse 2s ease-out infinite; }
-  .hero-grid > div > *, .portrait { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
-  .hero-grid > div > :nth-child(1) { animation-delay: 0.05s; }
-  .hero-grid > div > :nth-child(2) { animation-delay: 0.15s; }
-  .hero-grid > div > :nth-child(3) { animation-delay: 0.28s; }
-  .hero-grid > div > :nth-child(4) { animation-delay: 0.4s; }
+  /* Hero entrance ditangani GSAP di js/wow.js; jangan dianimasikan ganda di sini */
   .chip-float.a { animation: bob 3.6s ease-in-out infinite alternate; }
   .chip-float.b { animation: bob 4.4s ease-in-out -1.5s infinite alternate; }
   .timeline li:first-child::before { animation: dotpulse 2.6s ease-out infinite; }
