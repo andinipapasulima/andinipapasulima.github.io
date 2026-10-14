@@ -31,8 +31,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="preload" as="image" href="img/foto.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/wow.js" defer></script>
   <script src="js/main.js" defer></script>
 
   <script type="application/ld+json">
@@ -83,8 +88,8 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div>
-        <span class="pill"><i class="dot" aria-hidden="true"></i><span data-en="Open to internships and part-time roles">Terbuka untuk magang dan paruh waktu</span></span>
-        <h1 id="hero-title" data-en="<span>Structured code.</span><em>Considered details.</em>"><span>Kode yang tertata.</span><em>Detail yang diperhatikan.</em></h1>
+        <span class="pill" data-tilt><i class="dot" aria-hidden="true"></i><span data-en="Open to internships and part-time roles">Terbuka untuk magang dan paruh waktu</span></span>
+        <h1 id="hero-title" data-split data-en="<span>Structured code.</span><em>Considered details.</em>"><span>Kode yang tertata.</span><em>Detail yang diperhatikan.</em></h1>
         <p class="sub" data-en="Andini Papa Sulima, an Informatics student at UPN “Veteran” Yogyakarta. I build web and desktop applications, and I improve them through feedback until they are clear to use.">Andini Papa Sulima, mahasiswa Informatika di UPN “Veteran” Yogyakarta. Saya membangun aplikasi web dan desktop, lalu menyempurnakannya lewat masukan sampai jelas dipakai.</p>
         <div class="cta">
           <a class="btn fill" href="#proyek" data-en="View selected work">Lihat karya pilihan</a>
@@ -93,13 +98,19 @@
           <a class="btn ghost" href="cv/CV-Andini-Papa-Sulima.pdf" download data-cv hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span data-en="Download CV">Unduh CV</span></a>
         </div>
       </div>
-      <div class="portrait">
+      <div class="portrait" data-tilt>
         <picture>
           <source type="image/webp" srcset="img/foto.webp">
           <img src="img/foto.png" alt="Foto Andini Papa Sulima" width="544" height="999" fetchpriority="high" decoding="async">
         </picture>
         <span class="chip-float b" aria-hidden="true">UPN “Veteran”</span>
         <span class="chip-float a" aria-hidden="true">Yogyakarta, ID</span>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-in">
+        <span>Aplikasi Web</span><i>✦</i><span>Desktop &amp; OOP</span><i>✦</i><span>Python &amp; Data</span><i>✦</i><span>Keamanan Dasar</span><i>✦</i><span>UI/UX</span><i>✦</i>
+        <span>Aplikasi Web</span><i>✦</i><span>Desktop &amp; OOP</span><i>✦</i><span>Python &amp; Data</span><i>✦</i><span>Keamanan Dasar</span><i>✦</i><span>UI/UX</span><i>✦</i>
       </div>
     </div>
   </section>
@@ -131,7 +142,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-en="About">Tentang</p>
-        <h2 id="tentang-title" data-en="Learning by building. <em>Improving by feedback.</em>">Belajar sambil membangun. <em>Berkembang lewat masukan.</em></h2>
+        <h2 id="tentang-title" class="h2-wide" data-en="Learning by building. <em>Improving by feedback.</em>">Belajar sambil membangun. <em>Berkembang lewat masukan.</em></h2>
       </div>
       <div class="about">
         <div class="txt">
@@ -152,28 +163,28 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-en="Focus">Fokus</p>
-        <h2 id="fokus-title" data-en="Four areas. <em>One careful approach.</em>">Empat bidang. <em>Satu cara kerja yang teliti.</em></h2>
+        <h2 id="fokus-title" class="h2-wide" data-en="Four areas. <em>One careful approach.</em>">Empat bidang. <em>Satu cara kerja yang teliti.</em></h2>
       </div>
       <div class="focus">
-        <article class="fcard">
+        <article class="fcard" data-tilt>
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
           <h3 data-en="Web applications">Aplikasi web</h3>
           <p data-en="Practical systems for coursework and management, with attention to the interface.">Sistem praktis untuk kuliah dan pengelolaan data, dengan perhatian pada antarmuka.</p>
           <ul class="chips"><li>PHP</li><li>MySQL</li><li>XAMPP</li></ul>
         </article>
-        <article class="fcard">
+        <article class="fcard" data-tilt>
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></div>
           <h3 data-en="Desktop &amp; OOP">Desktop &amp; OOP</h3>
           <p data-en="Object-oriented Java programs with threading and graphical interfaces.">Program Java berorientasi objek dengan threading dan antarmuka grafis.</p>
           <ul class="chips"><li>Java</li><li>Swing</li><li>NetBeans</li></ul>
         </article>
-        <article class="fcard">
+        <article class="fcard" data-tilt>
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
           <h3 data-en="Data &amp; decisions">Data &amp; keputusan</h3>
           <p data-en="Decision support methods and interactive apps that make the results visible.">Metode pendukung keputusan dan aplikasi interaktif yang menampilkan hasilnya dengan jelas.</p>
           <ul class="chips"><li>Python</li><li>Streamlit</li><li>Jupyter</li></ul>
         </article>
-        <article class="fcard">
+        <article class="fcard" data-tilt>
           <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
           <h3 data-en="Images &amp; cryptography">Citra &amp; kriptografi</h3>
           <p data-en="Image operations and classical ciphers implemented step by step.">Operasi citra dan cipher klasik yang diimplementasikan langkah demi langkah.</p>
@@ -187,7 +198,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-en="Tools &amp; skills">Alat &amp; skill</p>
-        <h2 id="skill-title" data-en="What I use. <em>What I study.</em>">Yang saya pakai. <em>Yang saya pelajari.</em></h2>
+        <h2 id="skill-title" class="h2-wide" data-en="What I use. <em>What I study.</em>">Yang saya pakai. <em>Yang saya pelajari.</em></h2>
       </div>
       <div class="skills">
         <div>
@@ -214,12 +225,12 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-en="Selected work">Karya pilihan</p>
-        <h2 id="proyek-title" data-en="Built for real use. <em>Refined through iteration.</em>">Dibuat untuk dipakai. <em>Disempurnakan berulang.</em></h2>
+        <h2 id="proyek-title" class="h2-wide" data-en="Built for real use. <em>Refined through iteration.</em>">Dibuat untuk dipakai. <em>Disempurnakan berulang.</em></h2>
         <p class="muted" data-en="More projects are on my GitHub profile.">Proyek lainnya ada di profil GitHub saya.</p>
       </div>
       <div class="grid">
 
-        <article class="card">
+        <article class="card" data-tilt>
           <div class="art">
             <picture>
               <source type="image/webp" srcset="img/tugas-640.webp 640w, img/tugas-1000.webp 1000w" sizes="(max-width: 700px) 92vw, (max-width: 1080px) 46vw, 340px">
@@ -239,7 +250,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-tilt>
           <div class="art">
             <picture>
               <source type="image/webp" srcset="img/kripto-640.webp 640w, img/kripto-1000.webp 1000w" sizes="(max-width: 700px) 92vw, (max-width: 1080px) 46vw, 340px">
@@ -260,7 +271,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-tilt>
           <div class="art">
             <picture>
               <source type="image/webp" srcset="img/spk-640.webp 640w, img/spk-1000.webp 1000w" sizes="(max-width: 700px) 92vw, (max-width: 1080px) 46vw, 340px">
@@ -280,7 +291,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-tilt>
           <div class="art">
             <picture>
               <source type="image/webp" srcset="img/trapesium-640.webp 640w, img/trapesium-1000.webp 1000w" sizes="(max-width: 700px) 92vw, (max-width: 1080px) 46vw, 340px">
@@ -300,7 +311,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-tilt>
           <div class="art">
             <picture>
               <source type="image/webp" srcset="img/wzone-640.webp 640w, img/wzone-1000.webp 1000w" sizes="(max-width: 700px) 92vw, (max-width: 1080px) 46vw, 340px">
@@ -321,7 +332,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-tilt>
           <div class="art">
             <svg viewBox="0 0 320 160" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path class="draw" d="M150 24c-22 0-38 16-38 36 0 28 38 64 38 64s38-36 38-64c0-20-16-36-38-36z"/><circle cx="150" cy="60" r="12"/><circle cx="214" cy="104" r="16" opacity=".7"/><path d="M226 116l14 14" opacity=".7"/></g></svg>
             <span class="tag soon" data-en="In design · Team of 4">Dalam perancangan · Tim 4 orang</span>
@@ -343,7 +354,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-en="Experience">Pengalaman</p>
-        <h2 id="pengalaman-title" data-en="Studying. <em>Serving. Mentoring.</em>">Belajar. <em>Melayani. Mendampingi.</em></h2>
+        <h2 id="pengalaman-title" class="h2-wide" data-en="Studying. <em>Serving. Mentoring.</em>">Belajar. <em>Melayani. Mendampingi.</em></h2>
       </div>
       <ol class="timeline">
         <li>
@@ -379,7 +390,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-en="Certificates &amp; achievements">Sertifikat &amp; pencapaian</p>
-        <h2 id="sertifikat-title" data-en="Proof of learning. <em>Recognized work.</em>">Bukti belajar. <em>Karya yang diakui.</em></h2>
+        <h2 id="sertifikat-title" class="h2-wide" data-en="Proof of learning. <em>Recognized work.</em>">Bukti belajar. <em>Karya yang diakui.</em></h2>
       </div>
       <ul class="certs">
         <li class="cert">
@@ -404,7 +415,7 @@
     <div class="wrap contact">
       <div>
         <p class="eyebrow" data-en="Contact">Kontak</p>
-        <h2 id="kontak-title" data-en="Open to internships. <em>Let’s talk.</em>">Terbuka untuk magang. <em>Mari bicara.</em></h2>
+        <h2 id="kontak-title" class="h2-wide" data-en="Open to internships. <em>Let’s talk.</em>">Terbuka untuk magang. <em>Mari bicara.</em></h2>
         <p class="muted" data-en="Send a message and I will reply as soon as I can.">Kirim pesan dan saya akan membalas secepatnya.</p>
         <div class="cta">
           <a class="btn fill" href="mailto:andinipapasulima@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span data-en="Send an email">Kirim email</span></a>
