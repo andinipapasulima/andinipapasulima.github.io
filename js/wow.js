@@ -23,8 +23,7 @@
       ['.card', 'fade-up'],
       ['.timeline li', 'fade-up'],
       ['.cert', 'fade-up'],
-      ['.contact > div', 'fade-up'],
-      ['.row', 'fade-up']
+      ['.contact-card', 'fade-up']
     ];
     reveal.forEach(function (r) {
       document.querySelectorAll(r[0]).forEach(function (el, i) {
