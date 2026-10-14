@@ -22,6 +22,7 @@ js/main.js        Bahasa, menu mobile, salin kontak, scroll-spy, animasi angka
 img/              Gambar teroptimasi (WebP + fallback), og-image, ikon
 favicon.svg       Favicon
 cv/               Tempat file CV (PDF)
+sertifikat/       Berkas PDF sertifikat
 ```
 
 ## Menjalankan di komputer sendiri
