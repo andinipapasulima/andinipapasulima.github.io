@@ -22,7 +22,6 @@
   var descTag = document.querySelector('meta[name="description"]');
   var btnId = document.getElementById('btn-id');
   var btnEn = document.getElementById('btn-en');
-  var copyLabels = { id: ['Salin', 'Tersalin', 'Gagal, salin manual'], en: ['Copy', 'Copied', 'Failed, copy manually'] };
   var lang = 'id';
 
   function applyLang(next) {
@@ -80,34 +79,6 @@
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
   onScroll();
-
-  /* ---------- Salin kontak ---------- */
-  $$('.copy').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var value = btn.getAttribute('data-copy');
-      function show(i) {
-        btn.textContent = copyLabels[lang][i];
-        clearTimeout(btn._t);
-        btn._t = setTimeout(function () { btn.textContent = copyLabels[lang][0]; }, 1800);
-      }
-      function fallback() {
-        var ta = document.createElement('textarea');
-        ta.value = value;
-        ta.setAttribute('readonly', '');
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        var ok = false;
-        try { ok = document.execCommand('copy'); } catch (e) {}
-        document.body.removeChild(ta);
-        show(ok ? 1 : 2);
-      }
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(value).then(function () { show(1); }, fallback);
-      } else { fallback(); }
-    });
-  });
 
   /* ---------- Scroll-spy dan count-up ---------- */
   var spyLinks = $$('#menu a');
