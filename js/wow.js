@@ -95,7 +95,6 @@
       });
       gsap.from(title.querySelectorAll('span'), {
         yPercent: 110,
-        opacity: 0,
         duration: 0.85,
         ease: 'power3.out',
         stagger: 0.12,
@@ -119,6 +118,13 @@
   } else if (hasGsap) {
     /* Di HP/tablet: jangan ada animasi parallax; AOS saja yang bekerja */
   }
+
+  /* ---------- Penjaga GSAP: kalau ada elemen hero yang tertinggal redup, paksa tampil ---------- */
+  setTimeout(function () {
+    if (typeof gsap !== 'undefined') {
+      gsap.set('.hero-grid > div > *, .portrait, #hero-title, #hero-title span', { clearProps: 'opacity,transform' });
+    }
+  }, 2500);
 
   /* ---------- Tilt on cards ---------- */
   if (fine && !reduce) {
