@@ -456,6 +456,15 @@ section.block { padding-block: clamp(3rem, 7vw, 5.5rem); border-top: 1px solid v
 .card .art img { display: block; object-fit: cover; object-position: top; transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .card:hover .art img { transform: scale(1.04); }
 .card .art svg { width: 100%; height: 100%; display: block; }
+.card .project-cover { gap: 0.55rem; align-content: center; padding: 4rem 1.5rem 1.5rem; text-align: center; }
+.project-cover strong { font: 500 clamp(1.7rem, 3vw, 2.2rem)/1.05 var(--font-display); color: var(--fg); }
+.project-cover > span:last-child { font-size: 0.85rem; color: var(--muted); }
+@media (min-width: 760px) {
+  .card-featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .card-featured .art { aspect-ratio: auto; min-height: 320px; border-bottom: 0; border-right: 1px solid var(--line); }
+  .card-featured .art img { object-fit: contain; object-position: center; }
+  .card-featured h3 { font-size: 1.5rem; }
+}
 .card .tag {
   position: absolute;
   z-index: 1;
