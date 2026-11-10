@@ -36,7 +36,9 @@ Lalu buka http://localhost:8000.
 ## Cara memperbarui konten
 
 - **CV**: simpan file sebagai `cv/CV-Andini-Papa-Sulima.pdf`. Tombol "Unduh CV" muncul otomatis setelah file ada.
-- **Live demo proyek**: di `index.html`, setiap kartu proyek punya link "Live demo" yang dikomentari. Hapus komentarnya dan isi URL.
+- **Proyek pilihan**: section `#proyek` memuat SRIKANDI, Neo-Linktree, Tracker Tugas Kuliah, WZone Gym Tracker, dan Personal Command Center. Kontribusi pada proyek tim ditulis terpisah dari deskripsi aplikasi.
+- **Live demo proyek**: tambahkan tautan di `.links-row` hanya setelah ada URL demo yang aktif.
 - **Sertifikat & pencapaian**: isi item di section `#sertifikat`, hapus atribut `hidden`, lalu tambahkan link ke menu.
 - **Gambar proyek baru**: simpan versi lebar 640 dan 1000 piksel dalam WebP, plus JPEG 1000 piksel sebagai fallback, di folder `img/`.
+- **Sampul proyek**: Neo-Linktree dan Personal Command Center memakai judul dan ringkasan sebagai sampul tipografi sampai tangkapan layar tersedia.
 - **Teks dua bahasa**: teks Indonesia ditulis di isi elemen, versi Inggris di atribut `data-en`.
